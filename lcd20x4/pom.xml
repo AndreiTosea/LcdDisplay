@@ -4,7 +4,7 @@
   <groupId>com.flame.lcd</groupId>
   <artifactId>lcd20x4</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>lcd20x4</name>
   <url>http://maven.apache.org</url>
 

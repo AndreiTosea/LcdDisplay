@@ -26,7 +26,21 @@ public class LcdDisplay extends LCDBase implements LCD {
             }
         }
 
-        this.lcdHandle = Lcd.lcdInit(rows, columns, dataPins.length, rsPin.getAddress(), strobePin.getAddress(), bits[0], bits[1], bits[2], bits[3], bits[4], bits[5], bits[6], bits[7]);
+        this.lcdHandle = Lcd.lcdInit(
+                rows,
+                columns,
+                dataPins.length,
+                rsPin.getAddress(),
+                strobePin.getAddress(),
+                bits[0],
+                bits[1],
+                bits[2],
+                bits[3],
+                bits[4],
+                bits[5],
+                bits[6],
+                bits[7]);
+
         if (this.lcdHandle == -1) {
             throw new RuntimeException("Invalid LCD handle returned from wiringPi: " + this.lcdHandle);
         }
