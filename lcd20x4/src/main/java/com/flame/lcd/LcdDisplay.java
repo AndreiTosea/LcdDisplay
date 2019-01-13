@@ -20,11 +20,7 @@ public class LcdDisplay extends LCDBase implements LCD {
         this.columns = columns;
         int[] bits = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
-        for(int index = 0; index < 8; ++index) {
-            if (index < dataPins.length) {
-                bits[index] = dataPins[index].getAddress();
-            }
-        }
+        setUsedPins(bits, dataPins);
 
         this.lcdHandle = Lcd.lcdInit(
                 rows,
@@ -43,6 +39,14 @@ public class LcdDisplay extends LCDBase implements LCD {
 
         if (this.lcdHandle == -1) {
             throw new RuntimeException("Invalid LCD handle returned from wiringPi: " + this.lcdHandle);
+        }
+    }
+
+    private void setUsedPins(int[] bits, Pin[] dataPins) {
+        for(int index = 0; index < 8; ++index) {
+            if (index < dataPins.length) {
+                bits[index] = dataPins[index].getAddress();
+            }
         }
     }
 
